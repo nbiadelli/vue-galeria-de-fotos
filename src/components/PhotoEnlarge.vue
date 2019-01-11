@@ -1,31 +1,35 @@
 <template>
   <div>
-    <md-dialog :md-active.sync="show">
-      <img :src="url" >
+    <md-dialog :md-active.sync="showDialog" :md-close-on-esc="true">
+      <img :src="url" />
     </md-dialog>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'PhotoEnlarge',
-  props:{
+  data () {
+    return {
+      showDialog: false
+    }
+  },
+  props: {
     url: {
       type: String,
-      default: "",
-    },
-    show: {
-      type: Boolean,
-      default: false,
+      default: ''
     }
-  }, 
+  },
+  watch: {
+    url: function (newVal, oldVal) {
+      this.showDialog = true
+    }
+  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .md-dialog {
-    max-width: 768px;
-  }
+.md-dialog {
+  max-width: 768px;
+}
 </style>

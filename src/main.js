@@ -6,10 +6,9 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueMaterial from 'vue-material'
-import Lightbox from 'vue-my-photos'
 import 'vue-material/dist/vue-material.min.css'
 
-Vue.use(VueMaterial, Lightbox)
+Vue.use(VueMaterial)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
